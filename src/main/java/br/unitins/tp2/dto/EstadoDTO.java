@@ -21,7 +21,7 @@ public final class EstadoDTO {
     public EstadoDTO(String nome, String sigla, Long idRegiao) {
         this.nome = nome;
         this.sigla = sigla;
-        this.idRegiao = idRegiao;
+        this.idRegiao = 1l;
     }
 
     public Long getIdRegiao() {

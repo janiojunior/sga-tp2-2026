@@ -53,7 +53,6 @@ public class EstadoResource {
     }
 
     @POST
-    @RolesAllowed("user")
     public Estado incluir(EstadoDTO dto) {
         return service.create(dto);
     }
