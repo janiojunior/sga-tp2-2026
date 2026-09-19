@@ -1,5 +1,6 @@
 package br.unitins.tp2.resource;
 
+import br.unitins.tp2.exception.ResourceNotFoundException;
 import br.unitins.tp2.model.Regiao;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -21,7 +22,11 @@ public class RegiaoResource {
     @GET
     @Path("/{id}")
     public Regiao buscarPorId(@PathParam("id") Long id) {
-        return Regiao.valueOf(id);
+        Regiao regiao = Regiao.valueOf(id);
+        if (regiao == null)
+            throw new ResourceNotFoundException("Região não encontrada.");
+
+        return regiao;
     }
 
 }

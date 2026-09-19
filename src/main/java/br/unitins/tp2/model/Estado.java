@@ -9,9 +9,10 @@ public class Estado extends DefaultEntity {
     @Column(length = 60, nullable = false)
     private String nome;
 
-    @Column(length = 2, nullable = false)
+    @Column(length = 2, nullable = false, unique = true)
     private String sigla;
 
+    @Column(nullable = false)
     private Regiao regiao;
 
     public String getNome() {

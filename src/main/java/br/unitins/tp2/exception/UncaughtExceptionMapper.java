@@ -5,7 +5,6 @@ import java.time.OffsetDateTime;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
-import io.quarkus.arc.profile.IfBuildProfile;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
@@ -15,7 +14,6 @@ import jakarta.ws.rs.ext.Provider;
 
 @Provider
 @ApplicationScoped
-@IfBuildProfile("prod")
 public class UncaughtExceptionMapper implements ExceptionMapper<Throwable> {
 
     private static final Logger LOG = Logger.getLogger(UncaughtExceptionMapper.class);

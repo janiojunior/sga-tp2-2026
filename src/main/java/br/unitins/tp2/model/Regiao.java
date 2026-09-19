@@ -1,5 +1,7 @@
 package br.unitins.tp2.model;
 
+import java.util.Objects;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
@@ -27,8 +29,11 @@ public enum Regiao {
     }
 
      public static Regiao valueOf(Long id) {
+        if (id == null)
+            return null;
+
         for (Regiao r : Regiao.values()) {
-            if (r.getId() == id)
+            if (Objects.equals(r.getId(), id))
                 return r;
         }
         return null;
