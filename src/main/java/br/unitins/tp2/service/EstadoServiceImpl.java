@@ -68,6 +68,7 @@ public class EstadoServiceImpl implements EstadoService {
     @Override
     public List<Estado> findAll(int page, int pageSize) {
         return estadoRepository.findAll().page(page, pageSize).list();
+        
     }
 
     @Override
